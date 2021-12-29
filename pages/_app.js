@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }) {
   return <ThemeProvider theme={darkTheme}>
     <Container sx={(theme) => ({
       backgroundColor: theme.palette.grey[800],
-      width: '100vw',
-      height: '100vh'
+      height: 'auto',
+      color: 'white'
     })}
     >
       <Component {...pageProps} />

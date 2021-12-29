@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardContent, Typography, CardActions, Button, Divider } from "@mui/material";
 import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { productGrouping } from "../utils/productGrouping";
 
-export default function Sidebar() {
+export default function Sidebar(props) {
     const [products, setProducts] = useState("");
     const [state, setState] = useState("");
     const [city, setCity] = useState("");
-    const [result, setResult] = useState([]);
-
-    useEffect(() => {
-        fetch('https://assessment-edvora.herokuapp.com')
-            .then(res => res.json())
-            .then((data) => {
-                console.log(data);
-                setResult(data);
-            })
-    }, [])
-
+    
     return (
         <>
             <Card sx={{ p: 2, m: 2, borderRadius: 3 }}>
                 <CardContent>
-                    <Typography sx={{ fontSize: 16 }} color="text.secondary" gutterBottom>
+                    <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
                         Filters
                     </Typography>
                     <Divider variant="middle"/>
@@ -31,8 +22,8 @@ export default function Sidebar() {
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
                             value={products} label="Product" onChange={(e) => setProducts(e.target.value)} size="small"  >
-                            {result.map(i => (
-                                <MenuItem value={i.product_name}>{i.product_name}</MenuItem>
+                            {props.details.length && [...new Set(props.details.map(r => r[0].product_name))].map(i => (
+                                <MenuItem value={i}>{i}</MenuItem>
                             ))}
                         </Select>
                     </FormControl>
@@ -42,8 +33,8 @@ export default function Sidebar() {
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
                             value={state} label="State" onChange={(e) => setState(e.target.value)} size="small"  >
-                            {result.map(i => (
-                                <MenuItem value={i.address.state}>{i.address.state}</MenuItem>
+                            {props.details.length && [...new Set(props.details.map(r => r[0].address.state))].map(i => (
+                                <MenuItem value={i}>{i}</MenuItem>
                             ))}
 
                         </Select>
@@ -54,8 +45,8 @@ export default function Sidebar() {
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
                             value={city} label="City" onChange={(e) => setCity(e.target.value)} size="small"  >
-                            {result.map(i => (
-                                <MenuItem value={i.address.city}>{i.address.city}</MenuItem>
+                            {props.details.length && [...new Set(props.details.map(r => r[0].address.city))].map(i => (
+                                <MenuItem value={i}>{i}</MenuItem>
                             ))}
                         </Select>
                     </FormControl>
