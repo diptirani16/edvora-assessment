@@ -11,15 +11,15 @@ export default function ProductionList(props) {
             <Typography sx={{ fontSize: 25, fontWeight: 600 }} color="text.secondary" gutterBottom>
                 Products
             </Typography>
-            {props.details.length && props.details.map((i, indx) => (
-                <>
+            {props.details.length && props.details.map((i, index) => (
+                <React.Fragment key={index}>
                     <Typography sx={{ fontSize: 20, fontWeight: 400, mt: 2 }} gutterBottom>
                         {i[0].product_name}
                     </Typography>
                     <Divider />
-                    <Paper elevation={0} sx={{ p: 2, borderRadius: 2, mt: 2, display: 'flex', flexWrap: 'nowrap', overflow: 'scroll' }} key={indx}>
-                        {i.map((j) => (
-                            <Card sx={{ p: 1, m: 1, overflow: 'unset' }}>
+                    <Paper elevation={0} sx={{ p: 2, borderRadius: 2, mt: 2, display: 'flex', flexWrap: 'nowrap', overflow: 'scroll' }}>
+                        {i.map((j, ind) => (
+                            <Card sx={{ p: 1, m: 1, overflow: 'unset' }} key={ind}>
                                 <Box sx={{ display: 'flex' }}>
                                     <Box sx={{ display: 'flex', flexDirection: 'column', width: 120 }}>
                                         <CardMedia
@@ -61,7 +61,7 @@ export default function ProductionList(props) {
                         ))}
 
                     </Paper>
-                </>
+                </React.Fragment>
             ))}
         </>
     )

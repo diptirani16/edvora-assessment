@@ -32,7 +32,7 @@ export default function Sidebar(props) {
                             id="combo-box-demo"
                             size="small"
                             onChange={props.handleProduct}
-                            options={props.detailsState.length && [...new Set(props.detailsState.map(r => r[0].address.city))]}
+                            options={[...new Set(props.detailsState.map(r => r[0].address.city))]}
                             sx={{ mt: 2, backgroundColor: "#232323" }} 
                             renderInput={(params) => <TextField {...params} label="City" />} />
                 </CardContent>
