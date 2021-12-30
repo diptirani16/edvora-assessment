@@ -15,24 +15,24 @@ export default function Sidebar(props) {
                             disablePortal
                             id="combo-box-demo"
                             size="small"
-                            onChange={props.handleProduct}
-                            options={[...new Set(props.details.map(r => r[0].product_name))]}
+                            onChange={(_, value) => props.setProduct(value)}
+                            options={props.productList}
                             sx={{ mt: 4, backgroundColor: "#232323" }} 
                             renderInput={(params) => <TextField {...params} label="Product" />} />
                         <Autocomplete
                             disablePortal
                             id="combo-box-demo"
                             size="small"
-                            onChange={props.handleProduct}
-                            options={[...new Set(props.details.map(r => r[0].address.state))]}
+                            onChange={(_, value) => props.setState(value)}
+                            options={props.stateList}
                             sx={{ mt: 2, backgroundColor: "#232323" }} 
                             renderInput={(params) => <TextField {...params} label="State" />} />
                     <Autocomplete
                             disablePortal
                             id="combo-box-demo"
                             size="small"
-                            onChange={props.handleProduct}
-                            options={[...new Set(props.detailsState.map(r => r[0].address.city))]}
+                            onChange={(_, value) => props.setCity(value)}
+                            options={props.cityList}
                             sx={{ mt: 2, backgroundColor: "#232323" }} 
                             renderInput={(params) => <TextField {...params} label="City" />} />
                 </CardContent>

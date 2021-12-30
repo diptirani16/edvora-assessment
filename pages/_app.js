@@ -9,14 +9,14 @@ const darkTheme = createTheme({
 
 function MyApp({ Component, pageProps }) {
   return <ThemeProvider theme={darkTheme}>
-    <Container sx={(theme) => ({
+    {/* <Container sx={(theme) => ({
       backgroundColor: theme.palette.grey[800],
       height: 'auto',
       color: 'white'
     })}
-    >
+    > */}
       <Component {...pageProps} />
-    </Container>
+    {/* </Container> */}
   </ThemeProvider>
 }
 

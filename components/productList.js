@@ -11,7 +11,7 @@ export default function ProductionList(props) {
             <Typography sx={{ fontSize: 25, fontWeight: 600 }} color="text.secondary" gutterBottom>
                 Products
             </Typography>
-            {props.details.length && props.details.map((i, index) => (
+            {props.products.length && props.products.map((i, index) => (
                 <React.Fragment key={index}>
                     <Typography sx={{ fontSize: 20, fontWeight: 400, mt: 2 }} gutterBottom>
                         {i[0].product_name}
