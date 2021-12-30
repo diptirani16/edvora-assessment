@@ -25,6 +25,7 @@ export default function ProductionList(props) {
                                         <CardMedia
                                             component="img"
                                             sx={{ width: 70, height: 70, borderRadius: 2 }}
+                                            key={j.image}
                                             image={j.image}
                                             alt="Live from space album cover"
                                         />
