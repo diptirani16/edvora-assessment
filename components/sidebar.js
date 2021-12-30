@@ -4,7 +4,7 @@ import { Card, CardContent, Typography, Divider, Autocomplete, TextField } from 
 export default function Sidebar(props) {
 
     return (
-        <>
+        <React.Fragment>
             <Card sx={{ p: 2, m: 2, borderRadius: 3 }}>
                 <CardContent>
                     <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
@@ -37,6 +37,6 @@ export default function Sidebar(props) {
                             renderInput={(params) => <TextField {...params} label="City" />} />
                 </CardContent>
             </Card>
-        </>
+        </React.Fragment>
     )
 }

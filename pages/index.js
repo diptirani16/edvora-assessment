@@ -42,7 +42,7 @@ export default function App() {
 
   return (
     <Grid container justifyContent="space-between">
-      <Grid item lg={3} sm={5}>
+      <Grid item lg={3} md={5} xs={12}>
         <Sidebar 
           details={details} 
           detailsState={detailsState}
@@ -54,7 +54,7 @@ export default function App() {
           handleCity={handleCity} 
         />
       </Grid>
-      <Grid item lg={9} sm={7}>
+      <Grid item lg={9} md={7} xs={12}>
         <ProductionList details={details} />
       </Grid>
     </Grid>
