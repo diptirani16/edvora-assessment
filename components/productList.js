@@ -11,21 +11,20 @@ export default function ProductionList(props) {
             <Typography sx={{ fontSize: 25, fontWeight: 600 }} color="text.secondary" gutterBottom>
                 Products
             </Typography>
-            {props.details.length && props.details.map(i => (
+            {props.details.length && props.details.map((i, indx) => (
                 <>
                     <Typography sx={{ fontSize: 20, fontWeight: 400, mt: 2 }} gutterBottom>
                         {i[0].product_name}
                     </Typography>
                     <Divider />
-                    <Paper elevation={0} sx={{ p: 2, borderRadius: 2, mt: 2, display: 'flex', flexWrap: 'nowrap', overflow: 'scroll' }}>
-                        {i.map(j => (
+                    <Paper elevation={0} sx={{ p: 2, borderRadius: 2, mt: 2, display: 'flex', flexWrap: 'nowrap', overflow: 'scroll' }} key={indx}>
+                        {i.map((j) => (
                             <Card sx={{ p: 1, m: 1, overflow: 'unset' }}>
                                 <Box sx={{ display: 'flex' }}>
                                     <Box sx={{ display: 'flex', flexDirection: 'column', width: 120 }}>
                                         <CardMedia
                                             component="img"
                                             sx={{ width: 70, height: 70, borderRadius: 2 }}
-                                            key={j.image}
                                             image={j.image}
                                             alt="Live from space album cover"
                                         />

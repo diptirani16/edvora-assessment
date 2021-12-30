@@ -16,7 +16,7 @@ export default function Sidebar(props) {
                             id="combo-box-demo"
                             size="small"
                             onChange={props.handleProduct}
-                            options={props.details.length && [...new Set(props.details.map(r => r[0].product_name))]}
+                            options={[...new Set(props.details.map(r => r[0].product_name))]}
                             sx={{ mt: 4, backgroundColor: "#232323" }} 
                             renderInput={(params) => <TextField {...params} label="Product" />} />
                         <Autocomplete
@@ -24,7 +24,7 @@ export default function Sidebar(props) {
                             id="combo-box-demo"
                             size="small"
                             onChange={props.handleProduct}
-                            options={props.details.length && [...new Set(props.details.map(r => r[0].address.state))]}
+                            options={[...new Set(props.details.map(r => r[0].address.state))]}
                             sx={{ mt: 2, backgroundColor: "#232323" }} 
                             renderInput={(params) => <TextField {...params} label="State" />} />
                     <Autocomplete
