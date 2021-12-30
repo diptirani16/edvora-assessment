@@ -2,7 +2,7 @@
 
 ## Clone the repository:
 
-git clone https://github.com/diptirani16/edvora-assessment.git
+git clone [https://github.com/diptirani16/edvora-assessment.git](https://github.com/diptirani16/edvora-assessment.git)
 
 ## Run the development server
 
